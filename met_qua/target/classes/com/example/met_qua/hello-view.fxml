@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.met_qua.HelloController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openfile" text="Open video">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openlivescreen" text="Live screen">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openxemlive" text="Xem live">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Setting" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <StackPane onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" prefHeight="469.0" prefWidth="867.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediamain" fitHeight="200.0" fitWidth="200.0" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" />
+            <ImageView fx:id="play" fitHeight="73.0" fitWidth="94.0" onMouseClicked="#clickPlayPause" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" pickOnBounds="true" preserveRatio="true" />
+            <Slider fx:id="slidertime" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" onMousePressed="#sliderPressed" prefHeight="14.0" prefWidth="867.0" StackPane.alignment="BOTTOM_CENTER">
+               <padding>
+                  <Insets bottom="70.0" left="30.0" right="30.0" />
+               </padding>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Slider>
+         </children>
+      </StackPane>
+   </center>
+   <bottom>
+      <Pane prefHeight="96.0" prefWidth="918.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="1.0" text="IP adress :">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtIp" layoutX="133.0" layoutY="4.0" prefHeight="33.0" prefWidth="231.0" text="224.0.0.1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="70.0" layoutY="51.0" text="Port :">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtPort" layoutX="133.0" layoutY="53.0" prefHeight="35.0" prefWidth="231.0" text="5000">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="btnLive" layoutX="531.0" layoutY="26.0" mnemonicParsing="false" onAction="#openLive" prefHeight="44.0" prefWidth="101.0" text="Live">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnWlive" layoutX="649.0" layoutY="26.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="126.0" text="watch live">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnStop" layoutX="788.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#hanldeStop" prefHeight="44.0" prefWidth="101.0" text="Stop">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

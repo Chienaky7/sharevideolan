@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.met_qua.XemliveView">
+   <center>
+      <ImageView fx:id="imageLive" fitHeight="395.0" fitWidth="705.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <Pane prefHeight="84.0" prefWidth="773.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="282.0" layoutY="25.0" mnemonicParsing="false" onAction="#xemlive" text="Xem">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="4.0" layoutY="1.0" text="Ip">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtIp" layoutX="55.0" prefHeight="29.0" prefWidth="200.0" text="224.0.0.1" />
+            <Label layoutX="4.0" layoutY="44.0" text="Port">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtPort" layoutX="55.0" layoutY="42.0" prefHeight="29.0" prefWidth="200.0" text="5000" />
+            <Button layoutX="882.0" layoutY="44.0" mnemonicParsing="false" onAction="#close" text="Close">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="label" prefHeight="382.0" prefWidth="203.0" text="Label" />
+            <TextArea fx:id="txtchat" layoutY="399.0" prefHeight="39.0" prefWidth="139.0" />
+            <Button fx:id="btnchat" layoutX="139.0" layoutY="399.0" mnemonicParsing="false" onAction="#chat" prefHeight="38.0" prefWidth="62.0" text="Button" />
+         </children>
+      </Pane>
+   </right>
+</BorderPane>
